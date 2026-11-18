@@ -1,2 +1,3 @@
-# Crédits photos (Unsplash, licence Unsplash : usage libre, y compris commercial). Images d'illustration, pas des chantiers Darras.
-Sasun Bughdaryan (plâtre), Olek Buzunov (ossature, placo, isolation, mousse), Brett Jordan (grenier), Brian Wangenheim (pièce), Fabian Kleiser (plâtre neuf), Steffen Lemmerzahl (chantier), introspectivedsgn (fibre de verre). Photos étalonnées (même rendu chaud) dans photos/.
+# Crédits photos (Unsplash, usage libre)
+Images d'illustration, pas des réalisations de Darras Finition.
+Brian Wangenheim, introspectivedsgn, Olek Buzunov, Brett Jordan, Fabian Kleiser, Steffen Lemmerzahl, Sasun Bughdaryan
