@@ -1,3 +1,2 @@
-# Crédits photos
-
-Aucune photo tierce utilisée dans cette V1 : visuels dessinés (illustration des couches de mur) et emplacements d'attente pour les photos réelles du client.
+# Crédits photos (Unsplash, licence Unsplash : usage libre, y compris commercial). Images d'illustration, pas des chantiers Darras.
+Sasun Bughdaryan (plâtre), Olek Buzunov (ossature, placo, isolation, mousse), Brett Jordan (grenier), Brian Wangenheim (pièce), Fabian Kleiser (plâtre neuf), Steffen Lemmerzahl (chantier), introspectivedsgn (fibre de verre). Photos étalonnées (même rendu chaud) dans photos/.
