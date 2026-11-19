@@ -3,11 +3,12 @@ var q=function(s,r){return Array.prototype.slice.call((r||document).querySelecto
 var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)');
 var bar=document.getElementById('bar'),hero=document.querySelector('.hero'),m=document.getElementById('mm'),burger=document.querySelector('.mn');
 /* ---------- menu burger + accordéon ---------- */
-function mOpen(o){m.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);if(o)m.querySelector('.x').focus();else burger.focus()}
+function lock(o){document.documentElement.classList.toggle('lock',o);document.body.classList.toggle('lock',o)}
+function mOpen(o){m.classList.toggle('open',o);lock(o);burger.setAttribute('aria-expanded',o);if(o)m.querySelector('.x').focus();else burger.focus()}
 burger.setAttribute('aria-haspopup','dialog');burger.setAttribute('aria-expanded','false');
 burger.onclick=function(){mOpen(true)};
 q('.mm .x').forEach(function(b){b.onclick=function(){mOpen(false)}});
-q('.mm a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');burger.setAttribute('aria-expanded','false')})});
+q('.mm a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');lock(false);burger.setAttribute('aria-expanded','false')})});
 q('.mm .at').forEach(function(b){b.onclick=function(){var o=b.getAttribute('aria-expanded')!=='true';q('.mm .at').forEach(function(x){x.setAttribute('aria-expanded','false');document.getElementById(x.getAttribute('aria-controls')).hidden=true});if(o){b.setAttribute('aria-expanded','true');document.getElementById(b.getAttribute('aria-controls')).hidden=false}}});
 /* ---------- menu desktop : un seul panneau ouvert ---------- */
 var dds=q('.dd'),tm;
@@ -25,7 +26,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('.dd'))closeA
 document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var o=dds.filter(function(d){return d.classList.contains('open')})[0];if(o){var f=o.contains(document.activeElement);setO(o,false);if(f)o.querySelector('.dt').focus()}if(m.classList.contains('open'))mOpen(false);if(!U.hidden)uClose()});
 /* ---------- modale « page du site complet » ---------- */
 var U=document.getElementById('up');
-q('[data-up]').forEach(function(a){a.onclick=function(e){e.preventDefault();closeAll();m.classList.remove('open');document.getElementById('upt').textContent=a.dataset.up;U.hidden=false;document.body.classList.add('upsell');if(bar)bar.classList.add('on');U.querySelector('.x2').focus()}});
+q('[data-up]').forEach(function(a){a.onclick=function(e){e.preventDefault();closeAll();m.classList.remove('open');lock(false);burger.setAttribute('aria-expanded','false');document.getElementById('upt').textContent=a.dataset.up;U.hidden=false;document.body.classList.add('upsell');if(bar)bar.classList.add('on');U.querySelector('.x2').focus()}});
 function uClose(){U.hidden=true;document.body.classList.remove('upsell');if(bar&&hero)bar.classList.toggle('on',hero.getBoundingClientRect().bottom<80)}
 U.onclick=function(e){if(e.target===U||e.target.closest('[data-close]'))uClose()};
 /* ---------- carrousel : boutons + glisser avec inertie ---------- */
