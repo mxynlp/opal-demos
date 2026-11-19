@@ -1,7 +1,7 @@
 (function(){
 var q=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)');
-var m=document.getElementById('mm'),burger=document.querySelector('.mn');
+var bar=document.getElementById('bar'),hero=document.querySelector('.hero'),m=document.getElementById('mm'),burger=document.querySelector('.mn');
 /* ---------- menu burger + accordéon ---------- */
 function mOpen(o){m.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);if(o)m.querySelector('.x').focus();else burger.focus()}
 burger.setAttribute('aria-haspopup','dialog');burger.setAttribute('aria-expanded','false');
@@ -22,11 +22,12 @@ dds.forEach(function(d){var t=d.querySelector('.dt'),items=function(){return q('
  d.addEventListener('focusout',function(e){if(!d.contains(e.relatedTarget))setO(d,false)});
  q('.sm a',d).forEach(function(a){a.addEventListener('click',function(){setO(d,false)})})});
 document.addEventListener('click',function(e){if(!e.target.closest('.dd'))closeAll()});
-document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var o=dds.filter(function(d){return d.classList.contains('open')})[0];if(o){var f=o.contains(document.activeElement);setO(o,false);if(f)o.querySelector('.dt').focus()}if(m.classList.contains('open'))mOpen(false);if(!U.hidden)U.hidden=true});
+document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var o=dds.filter(function(d){return d.classList.contains('open')})[0];if(o){var f=o.contains(document.activeElement);setO(o,false);if(f)o.querySelector('.dt').focus()}if(m.classList.contains('open'))mOpen(false);if(!U.hidden)uClose()});
 /* ---------- modale « page du site complet » ---------- */
 var U=document.getElementById('up');
-q('[data-up]').forEach(function(a){a.onclick=function(e){e.preventDefault();closeAll();m.classList.remove('open');document.getElementById('upt').textContent=a.dataset.up;U.hidden=false;U.querySelector('.x2').focus()}});
-U.onclick=function(e){if(e.target===U||e.target.closest('.x2'))U.hidden=true};
+q('[data-up]').forEach(function(a){a.onclick=function(e){e.preventDefault();closeAll();m.classList.remove('open');document.getElementById('upt').textContent=a.dataset.up;U.hidden=false;document.body.classList.add('upsell');if(bar)bar.classList.add('on');U.querySelector('.x2').focus()}});
+function uClose(){U.hidden=true;document.body.classList.remove('upsell');if(bar&&hero)bar.classList.toggle('on',hero.getBoundingClientRect().bottom<80)}
+U.onclick=function(e){if(e.target===U||e.target.closest('[data-close]'))uClose()};
 /* ---------- carrousel : boutons + glisser avec inertie ---------- */
 var car=document.querySelector('.car');
 q('[data-c]').forEach(function(b){b.onclick=function(){car.scrollBy({left:b.dataset.c*320,behavior:'smooth'});q('.fx button').forEach(function(x){x.classList.toggle('on',x===b)})}});
@@ -36,7 +37,6 @@ addEventListener('pointermove',function(e){if(!down)return;car.classList.add('dr
 addEventListener('pointerup',function(){if(!down)return;down=0;(function g(){if(Math.abs(v)<.5){car.classList.remove('drag');return}car.scrollLeft-=v;v*=.93;raf=requestAnimationFrame(g)})()});
 car.addEventListener('click',function(e){if(Math.abs(lx-sx)>6&&car.classList.contains('drag'))e.preventDefault()},true)}
 /* ---------- barre mobile après le hero ---------- */
-var bar=document.getElementById('bar'),hero=document.querySelector('.hero');
 if(bar&&hero&&'IntersectionObserver' in window)new IntersectionObserver(function(es){bar.classList.toggle('on',!es[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(hero);else if(bar)bar.classList.add('on');
 /* ---------- compteurs ---------- */
 function count(el){var t=el.dataset.count,n=parseFloat(t);if(isNaN(n))return;var from=+el.dataset.from||0,s=t.replace(/[0-9.,]+/,'#'),t0=null,d=1600;el.style.display='inline-block';
