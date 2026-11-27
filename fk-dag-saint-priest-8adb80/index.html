@@ -504,6 +504,53 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 .bqs::before{border-left-color:rgba(35,33,31,.07);border-right-color:rgba(35,33,31,.07)}
 .bqs-band{border-radius:18px;border-color:rgba(35,33,31,.08)}
 @media (max-width:800px){.faq .bqs{border-radius:28px}}
+
+/* ===== v4 : fond d'ensemble, repères intégrés, à propos ===== */
+.fx::before{opacity:.38}
+.fx::after{background-image:linear-gradient(rgba(35,33,31,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(35,33,31,.06) 1px,transparent 1px),radial-gradient(circle,rgba(196,86,30,.4) 1.6px,transparent 2.2px);background-size:168px 168px,168px 168px,168px 168px;background-position:0 0,0 0,84px 84px;-webkit-mask-image:linear-gradient(#000 0,rgba(0,0,0,.9) 800px,rgba(0,0,0,.35) 1500px,rgba(0,0,0,.35) calc(100% - 1200px),#000 100%);mask-image:linear-gradient(#000 0,rgba(0,0,0,.9) 800px,rgba(0,0,0,.35) 1500px,rgba(0,0,0,.35) calc(100% - 1200px),#000 100%)}
+.fx i{width:900px;height:900px;opacity:.6}
+.fx .o1{left:-300px;top:-160px}
+.fx .o2{right:-360px;top:9%;background:radial-gradient(circle,#e8c9a0,transparent 68%)}
+.fx .o3{left:-380px;top:24%;background:radial-gradient(circle,#efae80,transparent 68%);opacity:.5}
+.fx .o4{right:-340px;top:40%;background:radial-gradient(circle,#d9cbb8,transparent 68%)}
+.fx .o5{left:-360px;top:56%;background:radial-gradient(circle,#ecb88f,transparent 68%);opacity:.5}
+.fx .o6{right:-380px;top:72%;background:radial-gradient(circle,#e6c79a,transparent 68%)}
+.fx .o7{left:-320px;top:88%;background:radial-gradient(circle,#efb085,transparent 68%);opacity:.5}
+.fx .wm{position:absolute;font:700 clamp(150px,24vw,380px)/1 var(--f);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(196,86,30,.16);white-space:nowrap;user-select:none}
+.fx .w1{right:-3%;top:16%;rotate:-5deg}
+.fx .w2{left:-4%;top:47%;rotate:4deg}
+@media (prefers-reduced-motion:no-preference){.fx .wm{animation:wmv 18s ease-in-out infinite alternate}@keyframes wmv{to{translate:40px -30px}}}
+@media (max-width:700px){.fx .wm{-webkit-text-stroke-width:1.5px}}
+
+/* bande repères : intégrée, sans bloc sombre */
+.rs{background:none;color:var(--ink);margin-top:34px}
+.rs .wrap{border-top:1px solid rgba(35,33,31,.16);border-bottom:1px solid rgba(35,33,31,.16)}
+.rs ul{padding:18px 0;gap:8px 40px}
+.rs li{color:#3e3b38;font-size:15.5px}
+.rs .ic{color:var(--red2)}
+.rs li+li{position:relative}
+@media (min-width:900px){.rs li+li::before{content:"";position:absolute;left:-21px;top:50%;width:5px;height:5px;margin-top:-2.5px;rotate:45deg;background:var(--red)}}
+.sv2{padding-top:84px}
+
+/* à propos : image mieux placée, espace utilisé */
+.about{padding-top:96px}
+.about .wrap{grid-template-columns:1fr minmax(0,540px);gap:64px;align-items:center}
+.about h2{max-width:12em}
+.about .tx p{max-width:34em}
+.arch-w{justify-self:end;width:100%;padding:24px 0 24px 36px}
+.arch{width:calc(100% - 44px);max-width:none;margin:0 0 0 auto;aspect-ratio:1/1.12;border-radius:999px 999px 28px 28px}
+.arch img{object-position:50% 40%}
+.blob{right:-6px;bottom:6px;width:190px;height:220px}
+.burst{right:6px;top:2px}
+.stat{left:0;bottom:46px;width:min(321px,86%)}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr;gap:40px}.arch-w{justify-self:center;max-width:460px;padding-left:20px}.arch{width:calc(100% - 20px)}.stat{left:-6px}}
+
+.trust,.m2,.devis{position:relative}
+.wm{position:absolute;z-index:-1;pointer-events:none;font:700 clamp(130px,22vw,340px)/1 var(--f);letter-spacing:-.06em;color:rgba(196,86,30,.035);-webkit-text-stroke:2px rgba(196,86,30,.2);white-space:nowrap;user-select:none}
+.wa{left:-2%;top:30px;rotate:-3deg}
+.wb{right:-3%;top:-30px;rotate:3deg}
+.wc{left:-1%;bottom:-20px;rotate:-2deg}
+@media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){.wm{animation:wmp linear both;animation-timeline:view()}@keyframes wmp{from{translate:-60px 40px}to{translate:60px -40px}}}}
 </style>
 </head>
 <body>
@@ -526,7 +573,7 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 </div>
 
 <main id="contenu">
-<div class="fx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i><i class="o4"></i></div>
+<div class="fx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i><i class="o4"></i><i class="o5"></i><i class="o6"></i><i class="o7"></i></div>
 <section class="hero" id="haut">
  <div class="wrap">
   <span class="pill h" style="--d:0"><i><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-hammer"/></svg></i>Façadier · Saint-Priest (69)</span>
@@ -577,7 +624,7 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 
 <div class="sep" aria-hidden="true"></div>
 
-<section class="trust" id="confiance">
+<section class="trust" id="confiance"><b class="wm wa" aria-hidden="true">ENDUIT</b>
  <div class="wrap">
   <figure class="rv"><img src="img/facade-3.webp" width="800" height="630" alt="Maison contemporaine à façade enduite, éclairée en fin de journée" loading="lazy"></figure>
   <div class="tx rv" style="--d:2">
@@ -609,7 +656,7 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 </section>
 
 <div class="sep" aria-hidden="true"></div>
-<section class="meth m2" id="methode">
+<section class="meth m2" id="methode"><b class="wm wb" aria-hidden="true">FAÇADE</b>
  <div class="wrap">
   <div class="mh rv">
    <h2>Du premier regard à la réception</h2>
@@ -666,7 +713,7 @@ main{position:relative;isolation:isolate;overflow-x:clip}
  </div>
 </section>
 
-<section class="devis" id="devis">
+<section class="devis" id="devis"><b class="wm wc" aria-hidden="true">DEVIS</b>
  <div class="wrap">
   <div class="tx rv">
    <h2>Parlons de <span class="u">votre façade</span></h2>
