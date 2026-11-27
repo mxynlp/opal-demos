@@ -6,7 +6,7 @@
 <title>F K Dag · Façadier à Saint-Priest (Rhône)</title>
 <meta name="description" content="F K Dag : enduits, ravalement et isolation par l'extérieur à Saint-Priest et autour de Lyon. Démo privée.">
 <link rel="icon" href="data:,">
-<link rel="preload" as="image" href="img/facade-1.webp">
+<link rel="preload" as="image" href="img/strip-1.webp">
 <style>
 @font-face{font-family:"Instrument Sans";font-weight:500;font-display:swap;src:url(instrument-sans-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Instrument Sans";font-weight:600;font-display:swap;src:url(instrument-sans-latin-600-normal.woff2) format("woff2")}
@@ -462,20 +462,59 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 }
 @media (prefers-reduced-motion:reduce){.fx i{animation:none}}
 
+
+/* ===== v3 : navbar flottante, hero d'avant, méthode, questions arrondies ===== */
+.hero{background:none;padding-top:40px}
+.hero .strip{margin-top:54px}
+.nav{position:sticky;top:0;z-index:60;background:none;padding:14px 0 0;pointer-events:none;box-shadow:none!important}
+.nav .wrap{pointer-events:auto;width:min(1186px,100% - 32px);height:66px;padding:0 9px 0 20px;gap:12px;border-radius:99px;background:rgba(255,251,245,.82);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1px solid rgba(35,33,31,.09);box-shadow:0 12px 30px -18px rgba(60,35,15,.35);transition:box-shadow .4s var(--e),background .4s}
+.nav.sc .wrap{background:rgba(255,251,245,.94);box-shadow:0 18px 40px -16px rgba(60,35,15,.45)}
+.nav .logo{font-size:21px}
+.menu{gap:2px;font-size:15.5px;font-weight:600}
+.menu a{padding:9px 16px;border-radius:99px;transition:background .3s,color .3s}
+.menu a::after{display:none}
+.menu a:hover{background:rgba(35,33,31,.07)}
+.menu a.on{background:var(--ink);color:#fff}
+.nt{display:inline-flex;align-items:center;gap:8px;margin-right:6px;padding:0 6px;font-weight:600;font-size:15px;white-space:nowrap}
+.nt .ic{font-size:18px;color:var(--red2)}
+.nav .burger{width:46px;height:46px;border-color:rgba(35,33,31,.12);background:#fff}
+@media (max-width:1150px){.nt{display:none}}
+@media (max-width:1000px){.menu,.nav .btn{display:none}.nav .wrap{height:62px;padding:0 8px 0 16px}}
+
+/* méthode */
+.m2{padding:100px 0 0}.m2 .wrap{display:block}
+.mh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.mh h2{font-size:clamp(34px,4.2vw,60px);line-height:1.05;max-width:10em}
+.mh p{max-width:27em;color:var(--mut);font-size:18px}
+.mg{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;margin-top:52px;align-items:start}
+.mp{position:sticky;top:110px;margin:0;aspect-ratio:4/5;border-radius:6px 6px 6px 110px;overflow:hidden;background:#b4694a}
+.mp img{width:100%;height:100%;object-fit:cover;object-position:55% 50%}
+.mp figcaption{position:absolute;left:12px;bottom:12px;padding:5px 11px;border-radius:99px;background:rgba(20,18,16,.62);color:#fff;font-size:12.5px;font-weight:500}
+.ms{counter-reset:s}
+.ms li{padding:30px 0 32px;border-top:1px solid rgba(35,33,31,.2);transition:padding-left .5s var(--e)}
+.ms li:last-child{border-bottom:1px solid rgba(35,33,31,.2)}
+.ms li:hover{padding-left:14px}
+.ms .k{display:block;font-size:14px;font-weight:600;color:var(--redt)}
+.ms h3{margin-top:8px;font-size:clamp(26px,2.7vw,36px);line-height:1.1}
+.ms p{margin-top:10px;max-width:30em;color:var(--mut);font-size:17px}
+@media (max-width:900px){.mh{grid-template-columns:1fr;gap:16px}.mg{grid-template-columns:1fr;gap:34px;margin-top:34px}.mp{position:relative;top:0;aspect-ratio:16/11;border-radius:6px 6px 6px 56px}.m2{padding-top:72px}.ms li{padding:24px 0 26px}}
+
+/* questions : bloc arrondi intégré */
+.faq .bqs{border-radius:40px;border:1px solid rgba(35,33,31,.09);background:rgba(255,255,255,.86);box-shadow:0 30px 60px -44px rgba(60,35,15,.4)}
+.bqs::before{border-left-color:rgba(35,33,31,.07);border-right-color:rgba(35,33,31,.07)}
+.bqs-band{border-radius:18px;border-color:rgba(35,33,31,.08)}
+@media (max-width:800px){.faq .bqs{border-radius:28px}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-phone" viewBox="0 0 256 256"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,60a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,60Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,124Zm0-112a92.1,92.1,0,0,0-92,92c0,77.36,81.64,135.4,85.12,137.83a12,12,0,0,0,13.76,0,259,259,0,0,0,42.18-39C205.15,170.57,220,136.37,220,104A92.1,92.1,0,0,0,128,12Zm31.3,174.71A249.35,249.35,0,0,1,128,216.89a249.35,249.35,0,0,1-31.3-30.18C80,167.37,60,137.31,60,104a68,68,0,0,1,136,0C196,137.31,176,167.37,159.3,186.71Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></symbol><symbol id="i-arrow-left" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H69l51.52,51.51a12,12,0,0,1-17,17l-72-72a12,12,0,0,1,0-17l72-72a12,12,0,0,1,17,17L69,116H216A12,12,0,0,1,228,128Z"/></symbol><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol><symbol id="i-house" viewBox="0 0 256 256"><path d="M222.14,105.85l-80-80a20,20,0,0,0-28.28,0l-80,80A19.86,19.86,0,0,0,28,120v96a12,12,0,0,0,12,12h64a12,12,0,0,0,12-12V164h24v52a12,12,0,0,0,12,12h64a12,12,0,0,0,12-12V120A19.86,19.86,0,0,0,222.14,105.85ZM204,204H164V152a12,12,0,0,0-12-12H104a12,12,0,0,0-12,12v52H52V121.65l76-76,76,76Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"/></symbol><symbol id="i-hammer" viewBox="0 0 256 256"><path d="M250.18,105.17,186.71,41.25a100.11,100.11,0,0,0-141.43,0l-.13.14L31.37,55.61a12,12,0,1,0,17.24,16.7L62.32,58.16A75.68,75.68,0,0,1,77.49,46.43L119,88,25.85,181.16a20,20,0,0,0,0,28.29l20.69,20.69a20,20,0,0,0,28.28,0L168,137l1.51,1.51h0l23.65,23.66a20,20,0,0,0,28.29,0l28.69-28.7A20,20,0,0,0,250.18,105.17ZM60.68,210.34l-15-15L108,133l15,15ZM140,131l-15-15,19.51-19.51a12,12,0,0,0,0-17L102.24,37.24a75.94,75.94,0,0,1,67.47,20.95l31.44,31.67L178,113l-1.51-1.51a12,12,0,0,0-17,0Zm67.32,11.31L195,130l23.09-23.09,12.3,12.39Z"/></symbol><symbol id="i-ruler" viewBox="0 0 256 256"><path d="M238.15,70.54,185.46,17.86a20,20,0,0,0-28.29,0L17.85,157.17a20,20,0,0,0,0,28.29l52.69,52.68a20,20,0,0,0,28.29,0L238.15,98.83A20,20,0,0,0,238.15,70.54ZM84.68,218.34l-47-47L64,145l23.52,23.52a12,12,0,0,0,17-17L81,128l15-15,23.51,23.52a12,12,0,0,0,17-17L113,96l15-15,23.52,23.52a12,12,0,0,0,17-17L145,64l26.35-26.34,47,47Z"/></symbol><symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm12,191.13V156h20a12,12,0,0,0,0-24H140V112a12,12,0,0,1,12-12h16a12,12,0,0,0,0-24H152a36,36,0,0,0-36,36v20H96a12,12,0,0,0,0,24h20v55.13a84,84,0,1,1,24,0Z"/></symbol><symbol id="i-instagram-logo" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,72a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM176,20H80A60.07,60.07,0,0,0,20,80v96a60.07,60.07,0,0,0,60,60h96a60.07,60.07,0,0,0,60-60V80A60.07,60.07,0,0,0,176,20Zm36,156a36,36,0,0,1-36,36H80a36,36,0,0,1-36-36V80A36,36,0,0,1,80,44h96a36,36,0,0,1,36,36ZM196,76a16,16,0,1,1-16-16A16,16,0,0,1,196,76Z"/></symbol><symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol><symbol id="i-star-fill" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol></svg>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
-<div class="top"><div class="wrap">
- <div class="l"><span><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-map-pin"/></svg>Saint-Priest (69)</span><a href="tel:33767490500"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>07 67 49 05 00</a></div>
- <div class="r"><span><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-hammer"/></svg>Particuliers et professionnels, Lyon est</span></div>
-</div></div>
 
 <header class="nav" id="nav"><div class="wrap">
  <a class="logo" href="#haut" aria-label="F K Dag, accueil"><i><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-house"/></svg></i>F K Dag</a>
  <nav class="menu" aria-label="Navigation principale"><a href="#haut" data-s="haut">Accueil</a><a href="#services" data-s="services">Services</a><a href="#confiance" data-s="confiance">Pourquoi nous</a><a href="#realisations" data-s="realisations">Réalisations</a><a href="#apropos" data-s="apropos">À propos</a><a href="#faq" data-s="faq">FAQ</a></nav>
+ <a class="nt" href="tel:33767490500"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>07 67 49 05 00</a>
  <a class="btn sm" href="#devis">Demander un devis<span class="rd"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></span></a>
  <button class="burger" id="bg" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mob"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-list"/></svg></button>
 </div></header>
@@ -488,25 +527,35 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 
 <main id="contenu">
 <div class="fx" aria-hidden="true"><i class="o1"></i><i class="o2"></i><i class="o3"></i><i class="o4"></i></div>
-<section class="hero v2h" id="haut">
- <div class="wrap hg">
-  <div class="hl">
-   <h1 class="h" style="--d:0">Des façades nettes, de l'enduit au dernier angle</h1>
-   <p class="sub h" style="--d:1">Enduit, ravalement, isolation par l'extérieur : F K Dag prépare le support, pose l'enduit et soigne la finition.</p>
-   <div class="cta h" style="--d:2"><a class="btn" href="#devis">Demander un devis<span class="rd"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></span></a><a class="tl" href="tel:33767490500"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>07 67 49 05 00</a></div>
-   <p class="loc h" style="--d:3">Saint-Priest et l'est lyonnais · particuliers et professionnels</p>
-  </div>
-  <div class="hr h" style="--d:2">
-   <figure class="big"><img src="img/facade-1.webp" width="601" height="800" alt="Façade enduite blanche aux volumes nets, sous un ciel bleu" fetchpriority="high"></figure>
-   <figure class="sm"><img src="img/strip-4.webp" width="800" height="746" alt="Ouvrier passant un enduit sur un mur clair"></figure>
+<section class="hero" id="haut">
+ <div class="wrap">
+  <span class="pill h" style="--d:0"><i><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-hammer"/></svg></i>Façadier · Saint-Priest (69)</span>
+  <h1 class="h" style="--d:1">Des <span class="u">façades</span> nettes à Saint-Priest et dans l'est lyonnais</h1>
+  <p class="sub h" style="--d:2">Enduit, ravalement, isolation par l'extérieur : nous préparons le support, posons l'enduit et soignons la finition, avec un chantier toujours propre.</p>
+  <a class="btn h" style="--d:3" href="#devis">Demander un devis<span class="rd"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></span></a>
+ </div>
+ <div class="strip h" style="--d:4" aria-label="Photos d'enduits et de façades">
+  <div class="track">
+   <figure><img src="img/strip-1.webp" width="900" height="599" alt="Mains d'un façadier avec une lisseuse et un couteau à enduire" fetchpriority="high"></figure>
+   <figure><img src="img/facade-1.webp" width="601" height="800" alt="Façade enduite blanche aux volumes nets" style="object-position:50% 40%"></figure>
+   <figure><img src="img/echaf.webp" width="900" height="600" alt="Façade sous échafaudage pendant un ravalement"></figure>
+   <figure><img src="img/facade-2.webp" width="800" height="534" alt="Maison contemporaine à façade enduite"></figure>
+   <figure aria-hidden="true"><img src="img/strip-1.webp" alt="" loading="lazy"></figure>
+   <figure aria-hidden="true"><img src="img/facade-1.webp" alt="" loading="lazy" style="object-position:50% 40%"></figure>
+   <figure aria-hidden="true"><img src="img/echaf.webp" alt="" loading="lazy"></figure>
+   <figure aria-hidden="true"><img src="img/facade-2.webp" alt="" loading="lazy"></figure>
   </div>
  </div>
- <div class="wrap nu">
-  <p class="nt">Finitions d'enduit courantes</p>
-  <ul>
-   <li><i class="t1"></i><span>Gratté</span></li><li><i class="t2"></i><span>Taloché</span></li><li><i class="t3"></i><span>Lissé</span></li><li><i class="t4"></i><span>Projeté</span></li><li><i class="t5"></i><span>Écrasé</span></li>
-  </ul>
- </div>
+</section>
+
+<section class="rs" aria-label="Repères">
+ <div class="wrap"><ul>
+  <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-map-pin"/></svg>Saint-Priest (69)</li>
+  <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-check-circle"/></svg>Devis après visite</li>
+  <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>07 67 49 05 00</li>
+  <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>Devis par WhatsApp</li>
+  <li>SIRET 915 233 381 00028</li>
+ </ul></div>
 </section>
 
 <section class="sv2" id="services">
@@ -560,20 +609,21 @@ main{position:relative;isolation:isolate;overflow-x:clip}
 </section>
 
 <div class="sep" aria-hidden="true"></div>
-<section class="meth" id="methode">
+<section class="meth m2" id="methode">
  <div class="wrap">
-  <div class="tx rv">
-   <h2>Un chantier mené <span class="u">étape par étape</span></h2>
+  <div class="mh rv">
+   <h2>Du premier regard à la réception</h2>
    <p>Vous savez ce qui est prévu avant le premier coup de truelle, et ce qui se passe chaque jour sur place.</p>
-   <a class="btn sm" href="#devis">Demander un devis<span class="rd"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></span></a>
   </div>
-  <ol class="steps rv" id="steps">
-   <span class="ln" aria-hidden="true"></span>
-   <li><span class="n">1</span><div><h3>Visite et devis</h3><p>Nous regardons la façade, mesurons les surfaces et vous remettons un devis écrit.</p></div></li>
-   <li><span class="n">2</span><div><h3>Protection et préparation</h3><p>Ouvertures protégées, échafaudage sécurisé, support nettoyé et repris.</p></div></li>
-   <li><span class="n">3</span><div><h3>Enduit et finitions</h3><p>Application de l'enduit, finition choisie ensemble, angles et jonctions soignés.</p></div></li>
-   <li><span class="n">4</span><div><h3>Nettoyage et réception</h3><p>Chantier nettoyé, protections retirées, tour de la façade avec vous.</p></div></li>
-  </ol>
+  <div class="mg">
+   <figure class="mp rv"><img src="img/cta-mur.webp" width="1600" height="1074" alt="Rouleau passant une peinture de façade orange sur un mur de brique" loading="lazy"><figcaption>Photo d'illustration</figcaption></figure>
+   <ol class="ms">
+    <li class="rv"><span class="k">Étape 1</span><h3>Visite et devis</h3><p>Nous regardons la façade, mesurons les surfaces et vous remettons un devis écrit.</p></li>
+    <li class="rv"><span class="k">Étape 2</span><h3>Protection et préparation</h3><p>Ouvertures protégées, échafaudage sécurisé, support nettoyé et repris.</p></li>
+    <li class="rv"><span class="k">Étape 3</span><h3>Enduit et finitions</h3><p>Application de l'enduit, finition choisie ensemble, angles et jonctions soignés.</p></li>
+    <li class="rv"><span class="k">Étape 4</span><h3>Nettoyage et réception</h3><p>Chantier nettoyé, protections retirées, tour de la façade avec vous.</p></li>
+   </ol>
+  </div>
  </div>
 </section>
 
